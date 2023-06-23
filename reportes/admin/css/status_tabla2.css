@@ -1,0 +1,71 @@
+/*estatus activo*/
+div#status:hover {
+
+  box-shadow: 0px 0px 20px #14ee17!important;
+}
+div#status {
+margin-left: 16px !important;
+margin-top: 3px!important;
+width: 28px!important;
+height: 28px!important;
+background-color: #1bf330!important;
+border-color: #15f619!important;
+border-radius: 737px;
+}
+
+/*estatus pause*/
+div#status2:hover {
+
+box-shadow: 0px 0px 20px #efbd0b;
+}
+div#status2 {
+margin-left: 16px !important;
+margin-top: 3px!important;
+width: 28px!important;
+height: 28px!important;
+background-color: #f5b520!important;
+  border-color: #f0c118!important;
+border-radius: 737px;
+}
+/*estatus revision*/
+div#status3:hover {
+
+box-shadow: 0px 0px 20px #e7f43e;
+}
+div#status3 {
+margin-left: 16px !important;
+margin-top: 3px!important;
+width: 28px!important;
+height: 28px!important;
+background-color: #eff54e!important;
+border-color: #f4ed36!important;
+border-radius: 737px;
+}
+/*estatus Pendiente por iniciar*/
+div#status4:hover {
+
+box-shadow: 0px 0px 20px #bc31f7;
+}
+div#status4 {
+margin-left: 16px !important;
+margin-top: 3px!important;
+width: 28px!important;
+height: 28px!important;
+background-color: #b510e3!important;
+border-color: #9b17f3!important;
+border-radius: 737px;
+}
+/*estatus Finalizado*/
+div#status5:hover {
+
+box-shadow: 0px 0px 20px #f41b1b;
+}
+div#status5 {
+margin-left: 16px !important;
+margin-top: 3px!important;
+width: 28px!important;
+height: 28px!important;
+background-color: #fa271b!important;
+border-color: #d31a13!important;
+border-radius: 737px;
+}
