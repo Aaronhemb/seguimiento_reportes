@@ -40,23 +40,24 @@ $id = $_REQUEST['id'];
  <?php include("./comentarios/modificar_comentarios.php") ?>
 
 <div class="card" style="
-width: 85%;
-margin-left: 119px!important;
-  /*  -webkit-box-shadow: -4px 4px 19px #000 !important;*/
+  width: 85%;
+  margin-left: 119px!important;
+    /*  -webkit-box-shadow: -4px 4px 19px #000 !important;*/
 
   ">
   <div class="card-header" style="
 
-   /*  background:linear-gradient(40deg,#ffd86f,#fc6262) !important;*/
-  /*background: linear-gradient(40deg,#45cafc,#303f9f) !important;*/" >
-    <input type="text"  readonly id="c_ticket"   value="No.<?php echo $row['id_ticket']; ?>">
-    <input type="text" readonly id="c_nombre"   value="<?php echo $row['nombreR']; ?>">
-    <input type="text" readonly id="c_nombre"   value="<?php echo $row['departamento']; ?>">
-    <input type="text" readonly id="c_nombre"   value="<?php echo $row['perfil']; ?>">
-   <?php
-     date_default_timezone_set('America/Mexico_City');
-     $newDate = date("y-m-d h:i:s", strtotime($row["fecha_crea"])); ?>
-    <input type="text" readonly id="c_nombre"   value="<?php echo $newDate; ?>">
+    /*  background:linear-gradient(40deg,#ffd86f,#fc6262) !important;*/
+    /*background: linear-gradient(40deg,#45cafc,#303f9f) !important;*/" >
+      <input type="text"  readonly id="c_ticket"   value="No.<?php echo $row['id_ticket']; ?>">
+      <input type="text" readonly id="c_nombre"   value="<?php echo $row['nombreR']; ?>">
+      <input type="text" readonly id="c_nombre"   value="<?php echo $row['departamento']; ?>">
+      <input type="text" readonly id="c_nombre"   value="<?php echo $row['perfil']; ?>">
+    <!---Trae el horario de las -->
+    <?php
+            date_default_timezone_set('America/Mazatlan');
+            $fechaActual = date('y-m-d H:i:s'); ?>
+   <input type="text" hidden  readonly class="form-control" id="validationCustomUsername" placeholder="tipo de usuario" name="fecha_crea" value="<?php echo $fechaActual ?>" aria-describedby="inputGroupPrepend" required>
 
   </div>
   <div class="card-body">
@@ -70,7 +71,7 @@ margin-left: 119px!important;
         <div class="texto_comentario">
         <?php echo html_entity_decode($row["descripcion"]);?>
         </div>
-  </blockquote>
+    </blockquote>
   </div>
 </div>
 
@@ -121,7 +122,11 @@ $('.click2edit').summernote('destroy');
 };
  </script>
 
- <?php include("./comentarios/trae_comentario.php"); ?>
+ <?php 
+ include("./comentarios/trae_comentario.php");
+ include("./comentarios/Nuevo_cambio_status.php")
+ 
+ ?>
 
 
  <?php } ?>

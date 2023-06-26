@@ -64,11 +64,11 @@
                                  <?php elseif ($rowSql['status'] == 2):?>
                                    <td id="status"> <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Revision" ></div> </td>
                                    <?php elseif ($rowSql['status'] == 3):?>
-                                   <td id="status"> <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
+                                   <td id="status"> <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
                                  <?php elseif ($rowSql['status'] == 4):?>
-                                   <td id="status"> <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Actividad por iniciar" ></div> </td>
+                                   <td id="status"> <div id="status5" data-toggle="popover" data-trigger="hover" data-content="Actividad por iniciar" ></div> </td>
                                    <?php elseif ($rowSql['status'] == 5):?>
-                                   <td id="status"> <div id="status5" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
+                                   <td id="status"> <div id="status6" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
                                  <?php endif; ?>
                                  <?php
                                    date_default_timezone_set('America/Mexico_City');

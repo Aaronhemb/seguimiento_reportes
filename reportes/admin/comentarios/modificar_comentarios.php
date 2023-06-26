@@ -18,10 +18,12 @@
       <input type="text" hidden name="id_perfil" value="<?php echo $_SESSION['usr_perfil'] ?>">
       <label class="control-label">Responder ticket:</label>
       <textarea name="comentario"   cols="30" rows="10" class="summernote" placeholder="comentario real"><?php echo isset($comentario) ? $comentario : '' ?></textarea>
-      <?php
-      date_default_timezone_set('America/Mexico_City');
-      $fechaActual = date('d-m-y H:i:s'); ?>
-      <input type="text" hidden readonly="readonly"   class="form-control" id="validationCustom02" placeholder="" name="fecha_crea" value="<?php echo $fechaActual ?>" >
+           <!---Trae el horario de las -->
+    <?php
+     date_default_timezone_set('America/Mazatlan');
+     $newDate = date("d-m-y h:i:s", strtotime($row["fecha_crea"])); ?>
+    <input type="text" hidden readonly id="c_nombre" name="fecha_crea"  value="<?php echo $newDate; ?>"> 
+   
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <button class="btn btn-primary" id="save" class="btn btn-primary" onclick="save()" type="submit">Responder Ticket</button>
       </form>

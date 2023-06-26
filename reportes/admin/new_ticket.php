@@ -90,11 +90,19 @@
           <i class="bi bi-calendar-date" style="width: 30px;font-size: 24px;"></i>
           <?php
             date_default_timezone_set('America/Mazatlan');
-            $fechaActual = date('d-m-y H:i:s'); ?>
-          <input type="text" readonly="readonly"  class="form-control" id="validationCustomUsername" placeholder="tipo de usuario" name="fecha_crea" value="<?php echo $fechaActual ?>" aria-describedby="inputGroupPrepend" required>
+            $fechaActual = date('y-m-d H:i:s'); ?>
+          <input type="text"  readonly="readonly"  class="form-control" id="validationCustomUsername" placeholder="tipo de usuario" name="fecha_crea" value="<?php echo $fechaActual ?>" aria-describedby="inputGroupPrepend" required>
         </label>
       </div>
     </div>
+
+
+          <?php
+            date_default_timezone_set('America/Mazatlan');
+            $fechaActual = date('d-m-y H:i:s'); ?>
+          <input type="text" hidden  readonly="readonly"  class="form-control" id="validationCustomUsername" placeholder="tipo de usuario" name="fecha_fin" value="<?php echo $fechaActual ?>" aria-describedby="inputGroupPrepend" required>
+        </label>
+
     <div class="col-md-2 mb-2">
       <div class="input-group">
         <div class="input-group-prepend">

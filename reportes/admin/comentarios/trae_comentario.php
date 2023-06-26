@@ -29,12 +29,19 @@
         <input type="text"  readonly id="c_nombre"   value="<?php echo $rowsl['user_id'] ?>">
         <input type="text" readonly id="c_nombre"   value="<?php echo $rowsl['user_type']; ?>">
         <input type="text" readonly id="c_nombre"   value="<?php echo $rowsl['id_perfil'];?>">
+
         <?php
-         date_default_timezone_set('America/Mexico_City');
-         $newDate = date("y-m-d h:i:s", strtotime($rowsl["fecha_crea"])); ?>
+         date_default_timezone_set('America/Mazatlan');
+         $newDate = date("d-m-y h:i:s", strtotime($rowsl["fecha_crea"])); ?>
         <input type="text" readonly id="c_nombre"   value="<?php echo $newDate; ?>">
 
-        </div>
+
+        <td> <a id="eliminar" style="
+        font-size: 20px;
+        margin-left: 88px;
+        " href="./comentarios/eliminar_comentario.php?id=<?php echo $rowsl['id']. ',' .$rowsl['ticket_id']?>"><i class="bi bi-trash3"> </i></a></td>
+        
+      </div>
         <div class="card-body">
         <blockquote class="blockquote mb-0">
           <div class="datos_reporte2"

@@ -32,12 +32,12 @@ $conexion->close();
         <?php elseif ($row['status'] == 2):?>
           <td id="status">Status actual  <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Revision" ></div> </td>
         <?php elseif ($row['status'] == 3):?>
-          <td id="status">Status actual   <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
+          <td id="status">Status actual   <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
         <?php elseif ($row['status'] == 4):?>
-          <td id="status">Status actual <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Actividades por iniciar" ></div> </td>
+          <td id="status">Status actual <div id="status5" data-toggle="popover" data-trigger="hover" data-content="Actividades por iniciar" ></div> </td>
           </td>
         <?php elseif ($row['status'] == 5):?>
-          <td id="status">Status actual <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
+          <td id="status">Status actual <div id="status6" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
         <?php endif; ?>
 
   <select type="text"  name="status" value="<?php echo $row['status']; ?>">
@@ -54,14 +54,20 @@ $conexion->close();
   <input type="text" hidden name="user_type" value="<?php echo 	$_SESSION['usr_departamento'] ?>">
   <input type="text" hidden name="ticket_id" value="<?php echo $row['id_ticket']; ?>">
   <input type="text" hidden name="id_perfil" value="<?php echo $_SESSION['usr_perfil'] ?>">
+  
   <?php
-  date_default_timezone_set('America/Mexico_City');
-  $fechaActual = date('y-m-d H:i:s'); ?>
-  <input type="text" hidden readonly="readonly"   class="form-control" id="validationCustom02" placeholder="" name="fecha_crea" value="<?php echo $fechaActual ?>" >
+  date_default_timezone_set('America/Mazatlan');
+  $fechaActual = date('d-m-y H:i:s'); ?>
+  <input type="text"  hidden  class="form-control" id="validationCustom02" placeholder="" name="fecha_fin" value="<?php echo $fechaActual ?>" >
+  
   <button name="cambio_estatus" class="btn btn-primary" type="submit" >Cambiar status</button>
 
 
 
 <br><br><br>
+
+
+
+
   </form>
 </div>

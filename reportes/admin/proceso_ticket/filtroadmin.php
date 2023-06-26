@@ -18,10 +18,12 @@ margin-bottom: 150px;
                           <td id="arriba_abajo" style="text-align:center;">Area</td>
                           <td id="arriba_abajo" style="text-align:center;">Status</td>
                           <td id="arriba_abajo" style="text-align:center;">Status</td>
-                          <td id="arriba_abajo" style="text-align:center;">Fecha Creacion</td>
+                          <td id="arriba_abajo" style="text-align:center;">Ultimo Status</td>
                           <td id="arriba_abajo" style="text-align:center;">Fecha Compromiso</td>
+                          <td id="arriba_abajo" style="text-align:center;">Fecha Creacion</td>
                           <td style="display: none;" id="arriba_abajo" style="text-align:center;">Fecha Actual</td>
                           <td id="arriba_abajo" style="text-align:center;">Status fecha</td>
+                          <td id="arriba_abajo" style="text-align:center;">Semana</td>
                           <td id="arriba_abajo" style="text-align:center;">view</td>
                         </tr>
 
@@ -64,17 +66,17 @@ margin-bottom: 150px;
                                 <?php elseif ($rowSql['status'] == 2):?>
                                   <td id="status"> <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Revision" ></div> </td>
                                   <?php elseif ($rowSql['status'] == 3):?>
-                                  <td id="status"> <div id="status3" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
+                                  <td id="status"> <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Cancelado" ></div> </td>
                                 <?php elseif ($rowSql['status'] == 4):?>
-                                  <td id="status"> <div id="status4" data-toggle="popover" data-trigger="hover" data-content="Actividad por iniciar" ></div> </td>
+                                  <td id="status"> <div id="status5" data-toggle="popover" data-trigger="hover" data-content="Actividad por iniciar" ></div> </td>
                                   <?php elseif ($rowSql['status'] == 5):?>
-                                  <td id="status"> <div id="status5" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
+                                  <td id="status"> <div id="status6" data-toggle="popover" data-trigger="hover" data-content="Finalizado" ></div> </td>
                                 <?php endif; ?>
 
 
                                 <?php
 
-                                date_default_timezone_set('America/Mexico_City');
+                                date_default_timezone_set('America/Mazatlan');
                                 $newDate = date("d-m-y h:i", strtotime($rowSql["fecha_crea"])); ?>
                                 <td id="fecha"><?php echo  $newDate; ?>  </td>
 
@@ -88,39 +90,62 @@ margin-bottom: 150px;
                                 date_default_timezone_set('America/Mazatlan');
                                 $newDate3 = date("d-m-y h:i"); ?>
                                 <td style="display: none;" id="fecha3"><?php echo  $newDate3; ?> </td>
-                               <?php
+
+                                <?php
+                                date_default_timezone_set('America/Mazatlan');
+                                $newDate4 = date("d-m-y h:i", strtotime($rowSql["fecha_fin"])); ?>
+                                <td id="fecha4"><?php echo  $newDate4; ?>
+                                </td>
 
 
-                                  // Calcular la diferencia en segundos
-                                  $newDate2_timestamp = strtotime($newDate2);
-                                  $newDate3_timestamp = strtotime($newDate3);
-                                  $diferencia = abs($newDate2_timestamp - $newDate3_timestamp);
-                                  
 
-                                  // Convertir la diferencia a minutos, horas, etc.
-                                  $minutos = floor($diferencia / 60);
-                                  $horas = floor($diferencia / 3600);
-                                  $dias = floor($diferencia / 86400);
+                                    <?php
+                                    // Agregar condición para verificar el estatus
+                                    $estatus = $rowSql["status"];
+                                    if ($estatus == 0) {
+                                        // Calcular la diferencia en segundos
+                                        $newDate2_timestamp = strtotime($newDate2);
+                                        $newDate3_timestamp = strtotime($newDate3);
+                                        $diferencia = abs($newDate2_timestamp - $newDate3_timestamp);
 
-                                // Comparar las fechas
-                                if ($newDate2 < $newDate3) {
-                                    echo '<td >
-                                    <div id="fecha3" data-toggle="popover" data-trigger="hover" data-content="Revaso Tiempo"
-                                        style="    margin-left: 16px !important;
-                                    margin-top: 3px!important;
-                                    width: 28px!important;
-                                    height: 28px!important;
-                                    background-color: #fb1b30!important;
-                                    border-color: #155e22!important;
-                                    border-radius: 737px;"
-                                  
-                                ></div>   
-                                    
-                                    </td>';
-                                } else {
-                                    echo '<td></td>';
-                                }
-                              ?>
+                                        // Convertir la diferencia a minutos, horas, etc.
+                                        $minutos = floor($diferencia / 60);
+                                        $horas = floor($diferencia / 3600);
+                                        $dias = floor($diferencia / 86400);
+
+                                        // Comparar las fechas
+                                        if ($newDate2 < $newDate3) {
+                                            echo '<td>
+                                            <div id="fecha3" data-toggle="popover" data-trigger="hover" data-content="Revaso Tiempo"
+                                                style="margin-left: 16px !important;
+                                                        margin-top: 3px!important;
+                                                        width: 28px!important;
+                                                        height: 28px!important;
+                                                        background-color: #fb1b30!important;
+                                                        border-color: #155e22!important;
+                                                        border-radius: 737px;">
+                                            </div>
+                                            </td>';
+                                        } else {
+                                            echo '<td></td>';
+                                        }
+                                    } else {
+                                        // Estatus no es igual a cero, no se realiza la comprobación de fechas
+                                        echo '<td></td>';
+                                    }
+                                    ?>
+                                  <td id="fecha5">
+                                  <?php
+                                    $fecha_creacion = date("d-m-y h:i", strtotime($rowSql["fecha_fin"])); // Fecha de creación del ticket (puedes obtenerla de tu base de datos)
+
+                                    // Obtener el número de la semana
+                                    $semana = date('W', strtotime($fecha_creacion));
+
+                                    echo "Creado en la semana: " . $semana;
+                                    ?>
+                                 
+                                  </td>
+
 
                               <td>
                                 <?php if ($rowSql['status'] == 4): ?>

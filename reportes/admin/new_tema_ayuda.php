@@ -10,7 +10,7 @@
            padding-left: 272px;
            padding-right: 255px;
 
-       "><span class="glyphicon glyphicon-export"></span>Crear mas Temas de Ayuda</a>
+       "><span class="glyphicon glyphicon-export"></span>Crear mas Temas de proyecto</a>
     </div><br><br><br>
 
     </h3>
@@ -21,8 +21,8 @@
 <form id="manage_ticket" class="needs-validation"   action="./proceso_tema_ayuda/proceso_guardar.php" enctype="multipart/form-data" method="post">
   <div class="form-row">
     <div class="col-md-3 mb-3">
-      <label id="form_departamento" for="validationTooltip01">Tema de Ayuda</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Tema de ayuda" name="tema_problema" value=""  >
+      <label id="form_departamento" for="validationTooltip01">Tema de proyecto</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Tema de proyecto" name="tema_problema" value=""  >
     </div>
     <div class="col-md-3 mb-2">
       <label id="form_telefono"  for="validationCustom02">  Status  </label>
@@ -46,7 +46,7 @@
 
   </div> <!--Cierre-->
 <br><br><br>
-  <button class="btn btn-primary" type="submit">Crear Tema de ayuda</button>
+  <button class="btn btn-primary" type="submit">Crear Tema de proyecto</button>
 </form>
 
 <?php } ?>

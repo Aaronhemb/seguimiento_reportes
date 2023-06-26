@@ -36,11 +36,7 @@ $row = $resultado->fetch_assoc();
   <input type="text" hidden name="id_perfil" value="<?php echo $_SESSION['usr_perfil'] ?>">
   <label class="control-label">Responder ticket:</label>
   <textarea name="comentario"   cols="30" rows="10" class="summernote" placeholder="comentario real"><?php echo isset($comentario) ? $comentario : '' ?></textarea>
-  <?php
-  date_default_timezone_set('America/Mexico_City');
-  $fechaActual = date('d-m-y H:i:s'); ?>
-  <input type="text" hidden readonly="readonly"   class="form-control" id="validationCustom02" placeholder="" name="fecha_crea" value="<?php echo $fechaActual ?>" >
-
+  
   <div class="input-group-append">
 
   <button name="cambio_status" onclick="funcionAlerta()" class="btn btn-info" type="submit">Aceptar</button>

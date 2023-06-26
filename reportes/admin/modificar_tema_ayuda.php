@@ -10,7 +10,7 @@
            padding-left: 272px;
            padding-right: 255px;
 
-       "><span class="glyphicon glyphicon-export"></span>crear mas temas de ayuda</a>
+       "><span class="glyphicon glyphicon-export"></span>crear mas temas de proyecto</a>
     </div><br><br><br>
 
     </h3>
@@ -46,7 +46,7 @@ $conexion->close();
 <form id="manage_ticket" class="needs-validation" action="proceso_tema_ayuda/modificar_tema_ayuda.php?id=<?php echo $row['id']; ?>" enctype="multipart/form-data" method="post">
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label id="form_departamento" for="validationTooltip01">Tema Ayuda</label>
+      <label id="form_departamento" for="validationTooltip01">Tema proyecto</label>
       <input type="text" class="form-control" id="validationTooltip01" placeholder="Departamento" name="tema_problema"  value="<?php echo $row['tema_problema']; ?>" >
     </div>
     <div class="col-md-3 mb-2">
@@ -74,7 +74,7 @@ $conexion->close();
     </div>
   </div> <!--Cierre-->
 <br><br><br>
-  <button class="btn btn-primary" type="submit">Modificar Tema de Ayuda</button>
+  <button class="btn btn-primary" type="submit">Modificar Tema de proyecto</button>
 </form>
 
 <?php } ?>

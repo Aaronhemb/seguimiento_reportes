@@ -41,7 +41,7 @@ if (!isset($_POST['fecha_crea'])){$_POST['fecha_crea'] = '';}
                 <thead>
                         <tr>
                           <td id="arriba_abajo" style="text-align:center;">ID</td>
-                          <td id="arriba_abajo" style="text-align:center;">Tema de Problema</td>
+                          <td id="arriba_abajo" style="text-align:center;">Tema de proyecto</td>
                           <td id="arriba_abajo" style="text-align:center;">Status</td>
                           <td id="arriba_abajo" style="text-align:center;">Fecha Creacion</td>
                           <td id="arriba_abajo" style="text-align:center;">Modificar</td>
